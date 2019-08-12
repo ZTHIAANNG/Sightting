@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="top">
+            <ol>
+                <!-- <li class="on">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li> -->
+            </ol>
+        </div>
+
+        <div class="main">
+            <ul>
+                <!-- <li class="active">
+                    <img src="img/2.png" alt="">
+                    <p>你是人间四月天</p>
+                </li>
+                <li>
+                    <img src="img/3.png" alt="">
+                    <p>你是人间四月天</p>
+                </li>
+                <li> <img src="img/4.png" alt="">
+                    <p>你是人间四月天</p>
+                </li>
+                <li> <img src="img/5.png" alt="">
+                    <p>你是人间四月天</p>
+                </li>
+                <li> <img src="img/6.png" alt="">
+                    <p>你是人间四月天</p>
+                </li>
+                <li> <img src="img/7.png" alt="">
+                    <p>你是人间四月天</p>
+                </li>
+                <li> <img src="img/8.png" alt="">
+                    <p>你是人间四月天</p>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- <script src="js/index.js"></script> -->
+
+    <script src="js/click.js"></script>
+    <script src="js/DATA.js"></script>
+    <script>
+        var index = 0;
+
+        var top = document.querySelector('.top');
+        var main = document.querySelector('.main');
+        var ol = document.querySelector('.top ol');
+        var ul = document.querySelector('.main ul');
+
+
+
+        var wrapper = document.querySelector('.wrapper');
+        console.log(data);
+
+        data.forEach(function(item, i) {
+            ol.innerHTML += `<li index='${i}' class='${index===i ? 'on':''}' >${item.num}</li>`;
+            // style='background:url(img/${item.img})'
+            ul.innerHTML += ` <li index='${i}' class='${index===i ? 'active':''}'> <img src="img/${item.img}" alt="">
+                    <p>${item.text}</p>
+                </li>`;
+
+
+
+        })
+
+        var ols = document.querySelectorAll('.top li');
+        var uls = document.querySelectorAll('.main li');
+        uls.forEach(function(item, i) {
+            obj.slide1(item, 'left', function() {
+
+                ols[i].classList.remove('on');
+                uls[i].classList.remove('active')
+                index--;
+                if (index < 0) {
+                    index = uls.length - 1
+                }
+
+                ols[index].classList.add('on');
+                uls[index].classList.add('active')
+
+
+            })
+            obj.slide1(item, 'right', function() {
+                ols[i].classList.remove('on');
+                uls[i].classList.remove('active')
+                index++;
+                if (index > uls.length - 1) {
+                    index = 0
+                }
+
+                ols[index].classList.add('on');
+                uls[index].classList.add('active')
+            })
+            obj.slide1(item, 'top', function() {
+                wrapper.classList.remove('show');
+                wrapper.classList.add('off')
+            })
+            obj.slide1(item, 'bottom', function() {
+                wrapper.classList.add('show');
+                wrapper.classList.remove('off')
+
+            })
+        })
+
+        ols.forEach(function(item, i) {
+            obj.click(item, function() {
+                ols[index].classList.remove('on');
+                uls[index].classList.remove('active');
+                index = i;
+                ols[index].classList.add('on');
+                uls[index].classList.add('active');
+            })
+
+        })
+
+        setInterval(function() {
+            ols[index].classList.remove('on');
+            uls[index].classList.remove('active');
+            index++;
+            if (index > ols.length - 1) {
+                index = 0
+            }
+            ols[index].classList.add('on');
+            uls[index].classList.add('active');
+        }, 3000)
+    </script>
+
+
+</body>
+
+</html>

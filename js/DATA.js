@@ -1,0 +1,37 @@
+var data = [{
+    num: 1,
+    img: '1.png',
+    text: '你是人间四月天'
+}, {
+    num: 2,
+    img: '2.png',
+    text: '你笑的样子真美'
+}, {
+    num: 3,
+    img: '3.png',
+    text: '陪你度过漫长岁月'
+}, {
+    num: 4,
+    img: '4.png',
+    text: '离开我你快乐吗'
+}, {
+    num: 5,
+    img: '5.png',
+    text: '那女孩对我说'
+}, {
+    num: 6,
+    img: '6.png',
+    text: '烟火里的尘埃'
+}, {
+    num: 7,
+    img: '7.png',
+    text: '像鱼'
+}, {
+    num: 8,
+    img: '8.png',
+    text: '我的宝贝'
+}, {
+    num: 9,
+    img: '9.png',
+    text: '喜欢'
+}]
